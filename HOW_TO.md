@@ -1,88 +1,81 @@
-This guide is a template that contains steps to install the project, technologies used, folder structure, etc.
-===================
+# Как пользоваться
 
-#
+Это руководство представляет собой шаблон, содержащий этапы установки проекта, используемые технологии, структуру папок и т.д.
 
-#### <a id="routes">Routes/pages of the website</a>
+## Маршруты/страницы сайта
 
-* `/`: Page to show the home or main page
-* `/blog`: Page for blog
-* `/contact`: Page for contact
+* `/`: Страница, чтобы показать домашнюю или главную страницу
+* `/blog`: Страница для блога
+* `/contact`: Страница для контактов
 
-#
-#
-#### Technologies used
-* Pug/Jade https://pugjs.org (This is a template engine and is a fastest way to write HTML)
-* Sass http://sass-lang.com/ (This is a CSS preprocessor which is used to write styles)
-* Webpack 3.x https://webpack.js.org (A module bundler to manager all the dependencies of your website)
+## Используемые технологии
 
-#### Dependencies
+* Pug/Jade <https://pugjs.org> (Это шаблонизатор и самый быстрый способ написания HTML)
+* Sass <http://sass-lang.com/> (Это препроцессор CSS, который используется для написания стилей)
+* Webpack 3.x <https://webpack.js.org> (Модуль bundler для управления всеми зависимостями вашего сайта)
 
-* Git https://git-scm.com/downloads
-* NodeJS >= 6 https://nodejs.org
-  * *In order to run the project in your local machine, you must install NodeJS. You can download the executable file for your Operating System from their website and install it.*
-* Yarn: `brew install yarn` or follow the specific guide for your OS https://yarnpkg.com/lang/en/docs/install/
+## Зависимости
 
-#
-# 
-# Guide to continue developing
+* Git <https://git-scm.com/downloads>
+* NodeJS >= 6 <https://nodejs.org>
+  * *Для запуска проекта на локальном компьютере необходимо установить NodeJS. Вы можете скачать исполняемый файл для вашей операционной системы с их веб-сайта и установить его.*
+* Yarn: `brew install yarn` или следуйте специальному руководству для вашей ОС <https://yarnpkg.com/lang/en/docs/install/>
 
-#### Dependencies
+## Руководство по дальнейшей разработке
 
-* Webpack and webpack dev server: Install them with `yarn global add webpack webpack-dev-server`
+### Зависимости
 
-#### Branches
-* `master` main branch, used for production.
+* Webpack и webpack dev server: Установите их с помощью `yarn global add webpack webpack-dev-server`
 
-#### Process of development
+### Ветки
 
-###### Omit the Cloning step if you already have the code in your computer
-##### Cloning  (new folder/computer)
+* `master` основная ветка, используемая для продакшена.
 
-1. Clone the `master` branch of the repository first `git clone git@github.com:my-user/my-repo.git`
+### Процесс развития
 
-##### Developing
-2. Open the folder `my-repo` in your code editor because that one contains the source code.
-3. Start the `development server` of the project with `yarn run dev` (if you want to test the development server in your local network, you should run `yarn run dev-network` instead and with the IP of your host computer, you can access to the website in your other devices)
-5. Check the available [routes](#routes) of your website.
-6. Perform all the modifications you need
+Склонируйте `master` ветку репозитория `git clone git@github.com:my-user/my-repo.git`
 
+### Разработка
 
-##### Compiling to production
-5. In order to generate the production package, press `CTRL + C` to stop the development server and run the command `yarn run prod` and the production build is going to be generated in the `dist` folder.
+1. Откройте папку `my-repo` в редакторе кода, так как она содержит исходный код.
+2. Запустите `development server` проекта с помощью `yarn run dev` (если вы хотите протестировать сервер разработки в своей локальной сети, вы должны запустить `yarn run dev-network` вместо этого и с IP вашего хост-компьютера, вы можете получить доступ к веб-сайту на других ваших устройствах)
+3. Проверьте доступные маршруты вашего веб-сайта.
+4. Выполните все необходимые модификации
 
-#### Testing
-6. You should always test the production package in your local before push to the repository, open the `dist` folder in your explorer/finder and open the `index.html` with your browser or
-7. use the recommended way installing `http-server` with `yarn global add http-server` and inside the `dist` folder run the command `http-server -p 9090` to finally open the url `http://localhost:9090` to see the production package in action.
+### Компиляция для продакшена
 
+Чтобы сгенерировать пакет для продакшена, нажмите `CTRL + C`, чтобы остановить сервер разработки, и выполните команду `yarn run prod`, и продакшен сборка будет сгенерирована в папке `dist`.
 
-##### Pushing changes to the repository
-8. Once you have reviewed the changes, it's time to push the new code.
+### Тестирование
 
-###### To master branch
-9. Open your terminal and change the path to your `your-repo` folder
-10. Run `git status` just to see the changes you have made
-11. Commit the changes with `git commit -am "My message for this commit"`
-12. Push them to the repository using `git push origin master`
-13. Done
+1. Перед загрузкой в репозиторий вы всегда должны тестировать продакшен пакет на своем локальном компьютере, открыть папку `dist` в вашем проводнике/поиске и открыть `index.html` с помощью браузера
+2. Используйте рекомендованный способ установки `http-server` с `yarn global add http-server` и внутри папки `dist` выполните команду `http-server -p 9090`, чтобы наконец открыть URL `http://localhost:9090`, чтобы увидеть производственный пакет в действии.
 
-#
-#
-# Project structure
+### Отправка изменений в репозиторий
 
-* `node_modules`: Contains all the javascript dependencies, you don't need to worry about this and also you should't modify any file there.
-* `dist`: Your production code will be placed here, the final package ready to install in your server. No changes are necessary here as this is automatically generated from your source files.
-* `src`: All of the source code is contained here... assets, js, scss, jade files, etc. **Any changes you want to make to the website must be done here.**
-  * `assets`: All the images, icons, static js files and the fonts needed to run the site. Any new assets must be placed here.
-  * `files`: Contain the PDFs of the guides.
-  * `styles`: All the CSS(SASS) styles separated into folders to have a modular structure.
-  * `views`: You can create more pages in this folder using JADE (.jade) instead of writing pure HTML.
-    * `guides`: The JADE file for each guide page, you can add more guides in this place or edit their content of the current ones.
-    * `layouts`: The main template files which contain your header and your footer used for all the guides. This is very useful to avoid putting the same header and footer in each guide, or webpage.
-    * `mixins`: Pieces of JADE files that are used for the same purpose of the layouts, which is to avoid repeat code in each guide template and instead use a mixing to place the same menu, share bar, page title, etc. just passing an attribute for each one.
-* `.editorconfig`: Used to set a configuration for your editor code, like use spaces instead tabs, the charset, of the files, etc.
-* `.gitignore`: Here is where you can set which files/folders shouldn't be tracked by `git`, that means, the file/folder written in this file will not be pushed to the repository such as `node_modules` and `dist` folder.
-* `package.json`: When you run the command `yarn install`, the packages installed are the ones listed in this file with the version that were installed, if you need to add more packages you can do it runing the command `yarn add package_name --save ` then a new package will be installed in the `node_modules` folder and the `package.json` will be updated with a new line of the package added.
-* `webpack.config.js`: This is one of the most important files because it's the one that builds the production package and also the development environment, compiling the SASS and Jade files into HTML and CSS code. It also minifies all the files.
+После того, как вы ознакомились с изменениями, пришло время отправить новый код.
 
+#### В ветку master
 
+1. Откройте терминал и измените путь к папке `your-repo`.
+2. Запустите `git status`, чтобы увидеть внесенные изменения
+3. Зафиксируйте изменения с помощью `git commit -am "My message for this commit"`
+4. Отправьте их в репозиторий, используя `git push origin master`
+5. Выполнено
+
+## Структура проекта
+
+* `node_modules`: содержит все зависимости javascript, вам не нужно беспокоиться об этом, а также вы не должны изменять какой-либо файл там.
+* `dist`: ваш производственный код будет размещен здесь, окончательный пакет готов к установке на вашем сервере. Никаких изменений здесь не требуется, так как это автоматически генерируется из ваших исходных файлов.
+* `src`: весь исходный код содержится здесь... assets, js, scss, jade files, и т.д. **Любые изменения, которые вы хотите внести на сайт, должны быть созданы здесь.**
+  * `assets`: все изображения, иконки, статические файлы js и шрифты, необходимые для запуска сайта. Любые новые assets должны быть размещены здесь.
+  * `files`: содержат PDF-файлы руководств.
+  * `styles`: все стили CSS(SASS) разделены на папки, чтобы иметь модульную структуру.
+  * `views`: вы можете создать больше страниц в этой папке с помощью JADE (.Джейд) вместо того, чтобы писать чистый HTML-код.
+    * `guides`: файл JADE для каждой страницы руководства, вы можете добавить больше руководств в этом месте или отредактировать их содержание текущих.
+    * `layouts`: основные файлы шаблонов, которые содержат ваш верхний и Нижний колонтитулы, используемые для всех руководств. Это очень полезно, чтобы избежать размещения одного и того же верхнего и нижнего колонтитула в каждом руководстве или веб-странице.
+    * `mixins`: фрагменты кода, которые используются для той же цели макетов, которая заключается в том, чтобы избежать повторения кода в каждом шаблоне руководства и вместо этого использовать микширование для размещения одного и того же меню, панели обмена, заголовка страницы и т.д. просто передаю атрибут для каждого из них.
+* `.editorconfig': используется для настройки конфигурации кода редактора, например, использовать пробелы вместо вкладок, кодировку файлов и т.д.
+* `.gitignore`: здесь вы можете указать, какие файлы/папки не должны отслеживаться с помощью `git`, то есть файл/папка, записанные в этом файле, не будут помещены в репозиторий, например `node_modules` и `dist`.
+* `package.json`: при выполнении команды `yarn install`, установленные пакеты являются теми, которые перечислены в этом файле с версией, которая была установлена, если вам нужно добавить больше пакетов, вы можете сделать это, выполнив команду `yarn add package_name --save`. Новый пакет будет установлен в папке `node_modules` и `package.json` будет обновлен с добавлением новой строки пакета.
+* `webpack.config.js`: это один из самых важных файлов, потому что именно он создает производственный пакет, а также среду разработки, компилируя файлы SASS и Jade в HTML и CSS код. Он также сокращает все файлы.
